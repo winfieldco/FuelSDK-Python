@@ -112,7 +112,10 @@ class ET_Client(object):
         """
         path = os.path.dirname(os.path.abspath(__file__))
         file_location = os.path.join(path, 'ExactTargetWSDL.xml')
-        file_url = 'file:///' + file_location 
+        
+        # XXXCMA Updated to be compatible with unix file systems (original version did not work Lucid Lynx Ubuntu)
+        # file_url = 'file:///' + file_location                       
+        file_url = 'file:' + file_location
         
         if not os.path.exists(file_location):   #if there is no local copy then go get it...
             self.retrieve_server_wsdl(wsdl_url, file_location)

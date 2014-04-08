@@ -1,3 +1,23 @@
+-----------------
+Notes
+-----------------
+Updated to fix issue deploying on Ubuntu Python 2.6, where had error FTP host not found, see fix in client.py
+
+-----------------
+Installation
+-----------------
+Install from command line after cloning the repo
+
+	python setup.py install
+
+Find the installation and change perms on the FuelSDK folder:
+
+	sudo chmod -R 777 FuelSDK
+
+This is to ensure that the WSDL can be cached to that directory, otherwise you will see a permission error on saving the file.
+
+
+
 # FuelSDK-Python
 
 ExactTarget Fuel SDK for Python
